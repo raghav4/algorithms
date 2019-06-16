@@ -1,20 +1,29 @@
-#include<bits/stdc++.h>
+#include<iostream>
 using namespace std;
-void printBrackets(int n,char *output, int j)
-{
-	if(n==0){
-		output[j] = ')';
-		output[j+1] = '\0';
+
+void generate_paranthesis(int n,char output[],int i,int open,int close){
+	if(i==2*n){
+		output[i] ='\0';
+		cout<<output<<endl;
 		return;
 	}
-	output[j] = '(';
-	printBrackets(n-1,output,j+1);
-	output[j]=')';
+	//recursive case 
+	if(open<n){
+		output[i] = '(';
+		generate_paranthesis(n,output,i+1,open+1,close);
+	}
+	if(close<open){
+		output[i] = ')';
+		generate_paranthesis(n,output,i+1,open,close+1);
+	}
 }
-int main()
-{
+
+int main(){
+
 	int n;
 	cin>>n;
-	char output[1001];
-	printBrackets(n,output,0);
+	char output[100];
+	generate_paranthesis(n,output,0,0,0);
+
+	return 0;
 }
