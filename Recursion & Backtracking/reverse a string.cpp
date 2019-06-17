@@ -17,5 +17,5 @@ int main()
 	cin>>s;
 	int l = s.length();
 	reverse(s,0,l);
-	cout<<"Reverse string is : "<<s;
+	cout<<"Reversed string is : "<<s;
 }
