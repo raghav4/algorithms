@@ -16,7 +16,7 @@ class node // Node Packet of a LL
 };
 
 // funtion to insert at the head of the LL : 
-void insertAtHead(node *&head, int data) 
+void InsertAtHead(node *&head, int data) 
 {
 	node* nn = new node(data); //Passing the data into the constructor.
 	nn -> next = head;
@@ -38,11 +38,12 @@ int main()
 	cout<<"Enter the number of elements you want to have in your LL\n";
 	cin>>n;
 	for(int i=0;i<n;i++){
-		cout<<"Enter the number\n";
 		cin>>m;
-		insertAtHead(head,m);
+		InsertAtHead(head,m);
 	}
+	cout<<"The Linked List is \n";
 	print(head);
+	return 0;
 }
 // Some Important Points : 
 // The only information we store is the address of the head node, with the help of head node we can traverse the entire Linked List.

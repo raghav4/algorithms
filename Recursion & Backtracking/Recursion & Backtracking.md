@@ -1,0 +1,1 @@
+- [Generate Brackets/Parenthesis](https://github.com/raghav4/algorithms/blob/master/Recursion%20%26%20Backtracking/Generate%20Brackets.cpp) - Given a number `N` representing the number of brackets for `N=2`, Write an algorithm which prints the number of different ways of arranging the brackets. For `N=2`, **Sample Output** is `()(), (())`
