@@ -1,4 +1,5 @@
 #include<bits/stdc++.h>
+#define pb push_back
 using namespace std;
 class Node
 {
@@ -34,40 +35,40 @@ void PrintTree(Node* root)
 	PrintTree(root->left);
 	PrintTree(root->right);
 }
-void PrintKthLevel(Node* root, int k)
+void PrintAllPaths(Node* root, vector<int> v)
 {
 	if(root==NULL){
 		return;
 	}
-	if(k==0){
-		cout<<root->data<<" ";
-	}
-	PrintKthLevel(root->left,k-1);
-	PrintKthLevel(root->right,k-1);
-}
-int HeightOfBT(Node* root)
-{
-	if(root==NULL){
-		return 0;
-	}
-	int left_height = HeightOfBT(root->left);
-	int right_height = HeightOfBT(root->right);
-	return max(left_height,right_height) + 1;
-}
-void PrintLevelWise(Node* root)
-{
-	int ht = HeightOfBT(root);
-	for(int i=0;i<ht;i++){
-		PrintKthLevel(root,i);
+	if(root->left==NULL && root->right==NULL){
+		v.push_back(root->data);
+		for(auto x: v){
+			cout<<x<<"->";
+		}
 		cout<<endl;
+		v.pop_back(); //
+		return;
 	}
+	v.pb(root->data);
+	PrintAllPaths(root->left,v);
+	PrintAllPaths(root->right,v);
+	// In case of by value , the copy is created again.
+	// If we pass the vector by reference then we have to do v.pop_back() again.
+	return;
 }
+
 int main()
 {
 	Node* root = BuildTree();
-	PrintLevelWise(root);
+	vector<int>v;
+	PrintAllPaths(root,v);
+	//PrintTree(root);
 }
 
 // Input : 1 2 4 -1 -1 -1 3 5 8 -1 -1 -1 6 -1 -1
 // 
-// Time Complexity : O(N^2) When, Tree is a skew Tree.
+// 
+// 
+// 
+// 
+// Know, how the recursion is popping the element

@@ -43,21 +43,21 @@ void PrintTree(Node* root)
 	PrintTree(root->left);
 	PrintTree(root->right);
 }
-int DiamterOfTree(Node* root)
-{
-	if(root==NULL){
-		return 0;
-	}
-	int h1 = HeightOfBT(root->left);
-	int h2 = HeightOfBT(root->right);
-	return max((h1,h2),(h1+h2));
-}
+// bool CheckHeightBalance(Node* root)
+// {
+// 	if(root==NULL){
+// 		return true;
+// 	}
+// 	int lh = HeightOfBT(root->left);
+// 	int rh = HeightOfBT(root->right);
+
+// 	if(abs(lh-rh)>1){
+// 		return false;
+// 	}
+// 	return (CheckHeightBalance(root->left) || CheckHeightBalance(root->right));
+// }
 int main()
 {
 	Node* root = BuildTree();
-	cout<<DiamterOfTree(root);
+	bool ans = CheckHeightBalance(root);
 }
-
-// O(N^2)
-// The diameter of a tree (sometimes called the width) is the number of nodes on the longest path between two end nodes.
-// In order to optimize the solution try bottom up approach instead of top down approach.
