@@ -1,0 +1,9 @@
+- [Build Binary Tree](https://github.com/raghav4/algorithms/blob/master/Binary%20Trees/01.%20Build%20Binary%20Tree.cpp) - Build and print Binary Tree in `Preorder`
+- [Print Kth Level of a BT](https://github.com/raghav4/algorithms/blob/master/Binary%20Trees/02.%20Print%20Kth%20Level%20of%20BT.cpp) 
+- [Find the Height of a BT](https://github.com/raghav4/algorithms/blob/master/Binary%20Trees/03.%20Height%20of%20a%20BT.cpp)
+- [Print Level Order/Wise BT](https://github.com/raghav4/algorithms/blob/master/Binary%20Trees/04.%20Print%20Level%20Wise%20BT.cpp) - Print Level Wise Binary Tree - 1, `O(N^2)` 
+- [Count Nodes](https://github.com/raghav4/algorithms/blob/master/Binary%20Trees/05.%20Count%20Nodes%20of%20a%20Tree.cpp) - Count Total Number of Nodes in a Binary Tree
+- [Sum of Nodes](https://github.com/raghav4/algorithms/blob/master/Binary%20Trees/06.%20Sum%20of%20Nodes.cpp) - Find the Sum of all the Nodes in a BT.
+- [Replace Node by Sum of Descendants except leaf node](https://github.com/raghav4/algorithms/blob/master/Binary%20Trees/07.%20Replace%20Node%20by%20Sum%20of%20Descendants%20except%20leaf%20node.cpp)
+- [Print Level Order](https://github.com/raghav4/algorithms/blob/master/Binary%20Trees/08.%20Level%20Order%20-%20Linear%20Time.cpp) - Linear Time `O(N)`
+- [Diameter of a BT](https://github.com/raghav4/algorithms/blob/master/Binary%20Trees/09.%20Diameter%20of%20a%20Tree.cpp)
