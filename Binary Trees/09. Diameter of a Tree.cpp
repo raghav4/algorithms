@@ -34,15 +34,6 @@ Node* BuildTree()
 	root->right = BuildTree();
 	return root;
 }
-void PrintTree(Node* root)
-{
-	if(root==NULL){
-		return;
-	}
-	cout<<root->data<<" ";
-	PrintTree(root->left);
-	PrintTree(root->right);
-}
 int DiamterOfTree(Node* root)
 {
 	if(root==NULL){
@@ -55,9 +46,8 @@ int DiamterOfTree(Node* root)
 int main()
 {
 	Node* root = BuildTree();
-	cout<<DiamterOfTree(root);
+	cout<<"The Diamter of the Binary Tree is "<<DiamterOfTree(root);
 }
 
 // O(N^2)
 // The diameter of a tree (sometimes called the width) is the number of nodes on the longest path between two end nodes.
-// In order to optimize the solution try bottom up approach instead of top down approach.

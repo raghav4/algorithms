@@ -2,7 +2,7 @@
 using namespace std;
 class Node
 {
-public:
+	public:
 	int data;
 	Node* left;
 	Node* right;
@@ -12,6 +12,12 @@ public:
 		left = NULL;
 		right = NULL;
 	}
+};
+class HBPair
+{
+	public: 
+	int data;
+	bool balanced;
 };
 int HeightOfBT(Node* root)
 {
@@ -34,28 +40,10 @@ Node* BuildTree()
 	root->right = BuildTree();
 	return root;
 }
-void PrintTree(Node* root)
+HBPair CheckHeightBalance(Node* root)
 {
-	if(root==NULL){
-		return;
-	}
-	cout<<root->data<<" ";
-	PrintTree(root->left);
-	PrintTree(root->right);
+	
 }
-// bool CheckHeightBalance(Node* root)
-// {
-// 	if(root==NULL){
-// 		return true;
-// 	}
-// 	int lh = HeightOfBT(root->left);
-// 	int rh = HeightOfBT(root->right);
-
-// 	if(abs(lh-rh)>1){
-// 		return false;
-// 	}
-// 	return (CheckHeightBalance(root->left) || CheckHeightBalance(root->right));
-// }
 int main()
 {
 	Node* root = BuildTree();
