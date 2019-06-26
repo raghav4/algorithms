@@ -16,7 +16,7 @@ public:
 int HeightOfBT(Node* root)
 {
 	if(root==NULL){
-		return 0;
+		return -1;
 	}
 	int left_height = HeightOfBT(root->left);
 	int right_height = HeightOfBT(root->right);
@@ -47,7 +47,7 @@ void PrintTree(Node* root)
 int main()
 {
 	Node* root = BuildTree();
-	cout<<HeightOfBT(root);
+	cout<<"The Height of the Binary Tree is "<<HeightOfBT(root);
 }
 
 // Input : 1 2 4 -1 -1 -1 3 5 8 -1 -1 -1 6 -1 -1
