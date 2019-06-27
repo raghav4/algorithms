@@ -16,7 +16,7 @@ class Node
 class HBPair
 {
 	public: 
-	int data;
+	int height;
 	bool balanced;
 };
 int HeightOfBT(Node* root)
@@ -42,10 +42,26 @@ Node* BuildTree()
 }
 HBPair CheckHeightBalance(Node* root)
 {
-	
+	HBPair P;
+	if(root==NULL){
+		P.height = 0;
+		P.balanced = true;
+		return P;
+	}
+	HBPair left = CheckHeightBalance(root->left);
+	HBPair right = CheckHeightBalance(root->right);
+	P.height = max(left.height,right.height) + 1;
+	if(abs(left.height-right.height)<=1 && left.balanced && right.balanced){
+		P.balanced = true;
+	}
+	else{
+		P.balanced = false;
+	}
+	return P;
 }
 int main()
 {
 	Node* root = BuildTree();
-	bool ans = CheckHeightBalance(root);
+	bool ans = CheckHeightBalance(root).balanced;
+	(ans)?(cout<<"Yes, It's Balanced\n"):(cout<<"No, its not a height balanced tree!\n");
 }

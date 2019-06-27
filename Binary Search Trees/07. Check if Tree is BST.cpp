@@ -14,6 +14,7 @@ public:
 	}
 	
 };
+class C
 Node* BuildBST(Node* root, int data)
 {
 	if(root==NULL){
@@ -38,14 +39,16 @@ Node* TakeInput(){
 	}
 	return root;
 }
-void PrintBST(Node* root)
+int checkBST(Node* root)
 {
 	if(root==NULL){
-		return;
+		return true;
 	}
-	cout<<root->data<<" ";
-	PrintBST(root->left);
-	PrintBST(root->left);
+	int left_max = checkBST(root->left);
+	int right_min = checkBST(root->right);
+	if(root->left!=NULL && root->right!=NULL){
+
+	}
 }
 int main()
 {
