@@ -59,3 +59,8 @@ int main()
 	int max = 0;
 	left(root,1,&max);
 }
+
+
+// for having parameterized constructor you should have a default constructor also.
+// 
+// Multiset stl: It can store mutliple values having equivalent values.
