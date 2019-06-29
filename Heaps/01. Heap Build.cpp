@@ -37,17 +37,18 @@ class Heap
 		v.pb(-1); // Blocking the 0th Index.
 		HeapType = ht;
 	}
-	// Insertion in Heap, Time complexity : O(LogN)
+	// Insertion in Heap, Time complexity : O(LogN) {For one element, for N elements it'll be O(NLogN)}
 	void push(int data)
 	{
 		v.pb(data);
+		// Take the element to the correct position.
 		int index = v.size()-1;
 		int parentIndex = index/2;
 		while(index>1 && compare(v[parentIndex],v[index]))
 		{
 			swap(v[parentIndex],v[index]);
 			index = parentIndex;
-			parentIndex/=2;
+			parentIndex = parentIndex/2;
 		}
 	}
 	// Get Max/Min in Heap , Time complexity: O(1)
@@ -65,7 +66,7 @@ class Heap
 	}
 	bool empty(){
 		if(v.size()==1){
-			return true;
+			return true; // If the size of the vector is 1, then it's empty {1 is because of 0th element which is blocked.}
 		}
 		return false;
 	}
@@ -84,8 +85,8 @@ int main()
 		h.pop();
 	}
 }
-
-// dynamic array? while constructing tree but howcome will the size of the array can grow unlike in vectors.
-// Dynamic Object.
-// Heap Sort
 // class is taking O(NLogN) to build up the tree, whereas it can be reduced to O(N).
+// The class is min heap by default in order to make it max heap change the ht parameter.
+
+
+// td: Heap Sort
