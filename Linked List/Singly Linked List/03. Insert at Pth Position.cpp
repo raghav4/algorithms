@@ -14,7 +14,7 @@ class Node
 void InsertAtPth(Node *&head, int data, int position)
 { 
 	// Handling the special cases
-	// If we want to insert at the 0th position.
+	// If we want to insert at the 0th/1st position.
 	Node* nn = new Node(data);
 	if(position==1){
 		nn->next = head;
