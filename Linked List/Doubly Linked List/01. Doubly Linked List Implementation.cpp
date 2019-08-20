@@ -9,6 +9,7 @@ public:
 	node(int d)
 	{
 		data = d;
+		prev = NULL; 
 		next = NULL;
 	}
 };
@@ -18,5 +19,6 @@ void BuildNode(node *&head)
 }
 int main()
 {
+	node* head = NULL;
 
 }
